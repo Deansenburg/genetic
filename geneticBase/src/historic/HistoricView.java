@@ -29,7 +29,6 @@ public class HistoricView extends Component implements MouseWheelListener, Mouse
 	{
 		model = m;
 		helper = new ViewHelper();
-		helper.addScale(1);
 	}
 	
 	public void createGui()
@@ -49,14 +48,14 @@ public class HistoricView extends Component implements MouseWheelListener, Mouse
 	public void paint(Graphics g) {
 		int width = getWidth();
 		int height = getHeight();
-		
+		helper.setWindowSize(width, height);
+
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, width, height);
 		
 		float x = 0, y = 0;
 		
 		g.setColor(Color.BLACK);
-
 		for (Generation gen : model.getGenerations()) {
 			x = 0;
 			y = gen.generation;
@@ -77,12 +76,12 @@ public class HistoricView extends Component implements MouseWheelListener, Mouse
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		int rot = e.getWheelRotation();
 		if (rot < 0){
-			helper.addScale(2);
+			helper.multiplyZoom(2);
 			repaint();
 		}
 		else
 		{
-			helper.addScale(0.5f);
+			helper.multiplyZoom(0.5f);
 			repaint();
 		}
 	}
@@ -90,9 +89,9 @@ public class HistoricView extends Component implements MouseWheelListener, Mouse
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		Point cur = e.getLocationOnScreen();
-		int xDif = cur.x - lastPos.x;
+		//int xDif = cur.x - lastPos.x;
 		int yDif = cur.y - lastPos.y;
-		helper.addXOffset(xDif);
+		//helper.addXOffset(xDif);
 		helper.addYOffset(yDif);
 		repaint();
 		lastPos = cur;
