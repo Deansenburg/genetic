@@ -66,7 +66,7 @@ public class GAController {
 		do {
 			runCycle();
 			g = getBest();
-			//System.out.println(g.Score());
+			System.out.println(g.Score());
 		} while (culler.isFinished(score, g.Score()));
 		return g;
 	}
