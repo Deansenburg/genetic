@@ -45,9 +45,9 @@ public class GAController {
 	public void runCycle() {
 		// breed individuals
 		int size = population.size();
+		mutater.mutate(mutRate, population);
 		population.addAll(breeder.breed((int) (size * breedRate),
 				population));
-		mutater.mutate(mutRate, population);
 		eval.evaluate(population);
 		culler.cull(population.size()-maxPop, population);
 
@@ -73,5 +73,10 @@ public class GAController {
 
 	public void addGene(Genome g) {
 		population.add(g);
+	}
+
+	public ArrayList<Genome> getPopulation()
+	{
+		return population;
 	}
 }

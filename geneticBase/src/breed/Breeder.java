@@ -14,6 +14,6 @@ public class Breeder extends BaseBreeder {
 
 		String child = g1.substring(0, split)
 				+ g2.substring(split, g2.length());
-		return new Genome(child);
+		return new Genome(child, g1, g2);
 	}
 }
