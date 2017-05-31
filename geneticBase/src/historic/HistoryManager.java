@@ -28,8 +28,7 @@ public class HistoryManager {
         try{
             PrintWriter writer = new PrintWriter(filePath, "UTF-8");
             writer.println("G:"+i.gene.String());
-            //first gen doesn't have parents
-            if (generation>0) {
+            if (i.parents.size() > 1) {
                 HistoricItem p1 = i.parents.get(0), p2 = i.parents.get(1);
                 writer.println("P:" + (generation - 1) + " " + p1.genId);
                 writer.println("P:" + (generation - 1) + " " + p2.genId);
@@ -42,7 +41,7 @@ public class HistoryManager {
 
     public void recordGeneration(Generation g)
     {
-        for (HistoricItem i:g.generationMembers)
+        for (HistoricItem i:g.getMembers())
         {
             recordItem(i, g.generation);
         }

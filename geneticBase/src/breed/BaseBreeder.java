@@ -3,6 +3,7 @@ package breed;
 import geneticBase.Genome;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public abstract class BaseBreeder implements IBreeder {
@@ -10,7 +11,7 @@ public abstract class BaseBreeder implements IBreeder {
 	protected Random r = new Random();
 
 	@Override
-	public ArrayList<Genome> breed(int num, ArrayList<Genome> genes) {
+	public List<Genome> breed(int num, List<Genome> genes) {
 		ArrayList<Genome> children = new ArrayList<Genome>();
 		
 		for (int i = 0; i < num; i++) {

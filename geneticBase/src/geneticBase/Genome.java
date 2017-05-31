@@ -14,10 +14,6 @@ public class Genome {
 	{
 		genString = s;
 		parents = new ArrayList<>();
-		if (p1.equals(""))
-		{
-			System.out.println();
-		}
 		parents.add(p1);
 		parents.add(p2);
 	}

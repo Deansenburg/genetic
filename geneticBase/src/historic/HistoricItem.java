@@ -34,5 +34,9 @@ public class HistoricItem {
 	{
 		children.add(child);
 	}
-	
+
+	@Override
+	public String toString() {
+		return gene.String();
+	}
 }

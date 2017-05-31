@@ -19,9 +19,7 @@ public class HistoricModel {
 
 	public List<Generation> getGenerations()
 	{
-		List<Generation> gen =new ArrayList<>();
-		gen.addAll(generations);
-		return gen;
+		return new ArrayList<>(generations);
 	}
 	
 }

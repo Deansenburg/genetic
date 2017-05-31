@@ -8,7 +8,7 @@ import java.util.List;
 public class Generation {
 
 	int generation;
-	List<HistoricItem> generationMembers;
+	private List<HistoricItem> generationMembers;
 	int id = 0;
 
 	public Generation(int gen)
@@ -52,6 +52,9 @@ public class Generation {
 		}
 	}
 
+	//note due to returning first that matches may result in instances where it appears that the genes breed with themselves
+	//this i not true, only that two separate but identical genes breed and the find function doesn't distinguish between them
+	//as there is no benefit too doing this
 	private HistoricItem find(String geneString)
 	{
 		for (HistoricItem i:generationMembers)
@@ -62,6 +65,11 @@ public class Generation {
 			}
 		}
 		return null;
+	}
+
+	public List<HistoricItem> getMembers()
+	{
+		return new ArrayList<>(generationMembers);
 	}
 
 }

@@ -2,9 +2,9 @@ package breed;
 
 import geneticBase.Genome;
 
-import java.util.ArrayList;
+import java.util.List;
 
 
 public interface IBreeder {
-	public ArrayList<Genome> breed(int num, ArrayList<Genome> genes);
+	List<Genome> breed(int num, List<Genome> genes);
 }

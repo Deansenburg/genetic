@@ -59,7 +59,7 @@ public class HistoricView extends Component implements MouseWheelListener, Mouse
 		for (Generation gen : model.getGenerations()) {
 			x = 0;
 			y = gen.generation;
-			for (HistoricItem i : gen.generationMembers) {
+			for (HistoricItem i : gen.getMembers()) {
 				Point p = helper.translate(x * 10, y * 10);
 				g.drawOval(p.x, p.y, helper.scale(5), helper.scale(5));
 				x += 1;
