@@ -1,8 +1,14 @@
 package historic;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+
+import static java.nio.file.FileVisitResult.CONTINUE;
+import static java.nio.file.FileVisitResult.TERMINATE;
 
 /**
  * Created by Dean on 30/05/17.
@@ -14,6 +20,44 @@ public class HistoryManager {
     public HistoryManager(String p)
     {
         path = p;
+        String dirPath = superPath+"/"+path;
+        File dir = new File(dirPath);
+        if (dir.isDirectory())
+        {
+            try {
+                System.out.println("Directory already exists - deleting");
+                deleteFileOrFolder(Paths.get(dirPath));
+                System.out.println("Deleting Finished");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void deleteFileOrFolder(final Path path) throws IOException {
+        Files.walkFileTree(path, new SimpleFileVisitor<Path>(){
+            @Override public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs)
+                    throws IOException {
+                Files.delete(file);
+                return CONTINUE;
+            }
+
+            @Override public FileVisitResult visitFileFailed(final Path file, final IOException e) {
+                return handleException(e);
+            }
+
+            private FileVisitResult handleException(final IOException e) {
+                e.printStackTrace(); // replace with more robust error handling
+                return TERMINATE;
+            }
+
+            @Override public FileVisitResult postVisitDirectory(final Path dir, final IOException e)
+                    throws IOException {
+                if(e!=null)return handleException(e);
+                Files.delete(dir);
+                return CONTINUE;
+            }
+        });
     }
 
     public void recordItem(HistoricItem i, int generation)
