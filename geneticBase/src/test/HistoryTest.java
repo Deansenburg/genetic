@@ -35,8 +35,8 @@ public class HistoryTest {
 		IEvaluator e = new SpecificStringEvaluator(sB.getBinaryString(target));
 
 		GAController gac = new GAController(b, m, c, e);
-		gac.addGene(new Genome(sB.getBinaryString("00000000"), "", "", IDManager.getId(), -1,-1));
-		gac.addGene(new Genome(sB.getBinaryString("00000000"), "", "", IDManager.getId(), -1, -1));
+		gac.addGene(new Genome(sB.getBinaryString("a"), "", "", IDManager.getId(), -1,-1));
+		gac.addGene(new Genome(sB.getBinaryString("a"), "", "", IDManager.getId(), -1, -1));
 		gac.setBreedRate(0.5);
 		gac.setMaxPop(10);
 		gac.setMutationRate(0.05);

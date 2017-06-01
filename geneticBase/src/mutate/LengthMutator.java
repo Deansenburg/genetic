@@ -17,17 +17,16 @@ public class LengthMutator extends BaseMutator{
 		for (Genome g : mutateList(percentage, genes)) {
 			if (r.nextInt(2) == 0)
 			{
-				for(int i=0;i<8;i++)
-				{
-					g.removeAt(r.nextInt(g.String().length()));
+				if(g.String().length() > 8) {
+					for (int i = 0; i < 8; i++) {
+						g.removeAt(r.nextInt(g.String().length()));
+					}
 				}
 			}
 			else
 			{
-				if(g.String().length() > 8) {
-					for (int i = 0; i < 8; i++) {
-						g.add('0');
-					}
+				for (int i = 0; i < 8; i++) {
+					g.add('0');
 				}
 			}
 		}
