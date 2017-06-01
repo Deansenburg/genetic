@@ -21,10 +21,10 @@ public abstract class BaseBreeder implements IBreeder {
 				num2++;
 			String p1 = genes.get(num1).String();
 			String p2 = genes.get(num2).String();
-			children.add(breed(p1, p2));
+			children.add(breed(p1, p2, genes.get(num1).getId(), genes.get(num2).getId()));
 		}
 		return children;
 	}
 	
-	protected abstract Genome breed(String g1, String g2);
+	protected abstract Genome breed(String g1, String g2, int id1, int id2);
 }

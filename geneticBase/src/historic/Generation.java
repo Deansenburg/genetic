@@ -26,7 +26,9 @@ public class Generation {
 	{
 		for(Genome i:members)
 		{
-			add(new HistoricItem(i, id));
+			Genome g = new Genome(i.String(), i.getParentString(0), i.getParentString(1),
+					i.getId(), i.getParentId(0), i.getParentId(1));
+			add(new HistoricItem(g, id));
 		}
 	}
 
@@ -35,16 +37,16 @@ public class Generation {
 		for (HistoricItem child:generationMembers)
 		{
 			//get historic record for this childs first parent
-			HistoricItem p1 = parentGen.find(child.gene.getParentString(0));
-			HistoricItem p2 = parentGen.find(child.gene.getParentString(1));
-			//this is not a parent child situation, the previous gene still exists
+			HistoricItem p1 = parentGen.find(child.getGene().getParentId(0));
+			HistoricItem p2 = parentGen.find(child.getGene().getParentId(1));
+			//this is not a parent child situation, the previous getGene() still exists
 			if (p1 == null)
 			{
-				p1 = parentGen.find(child.gene.String());
+				p1 = parentGen.find(child.getGene().getId());
 			}
 			if (p2 == null)
 			{
-				p2 = parentGen.find(child.gene.String());
+				p2 = parentGen.find(child.getGene().getId());
 			}
 			child.addParents(p1, p2);
 			p1.addChild(child);
@@ -55,11 +57,11 @@ public class Generation {
 	//note due to returning first that matches may result in instances where it appears that the genes breed with themselves
 	//this i not true, only that two separate but identical genes breed and the find function doesn't distinguish between them
 	//as there is no benefit too doing this
-	private HistoricItem find(String geneString)
+	private HistoricItem find(int id)
 	{
 		for (HistoricItem i:generationMembers)
 		{
-			if (geneString.equals(i.gene.String()))
+			if (i.getGene().getId() == id)
 			{
 				return i;
 			}
@@ -71,5 +73,12 @@ public class Generation {
 	{
 		return new ArrayList<>(generationMembers);
 	}
-
+	public HistoricItem getMember(int i)
+	{
+		//member id is based from index
+		if (i >= 0 && i < generationMembers.size()) {
+			return generationMembers.get(i);
+		}
+		return null;
+	}
 }

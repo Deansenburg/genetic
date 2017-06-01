@@ -26,10 +26,11 @@ public class CullLowest implements ICuller{
 	}
 
 	@Override
+	//if we're removing the lowest we're, looking for the highest
 	public Genome bestScore(ArrayList<Genome> pop) {
 		Genome lowest = pop.get(0);
 		for (Genome g : pop) {
-			if (lowest.Score() > g.Score())
+			if (lowest.Score() < g.Score())
 				lowest = g;
 		}
 		return lowest;

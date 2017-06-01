@@ -12,7 +12,7 @@ public class HistoricItem {
 	//can be many
 	List<HistoricItem> children;
 	
-	Genome gene;
+	private Genome gene;
 	int genId;
 
 	public HistoricItem(Genome g, int gId)
@@ -38,5 +38,10 @@ public class HistoricItem {
 	@Override
 	public String toString() {
 		return gene.String();
+	}
+
+	public Genome getGene()
+	{
+		return gene;
 	}
 }

@@ -19,19 +19,19 @@ public class HistoryManager {
 
     public HistoryManager(String p)
     {
-        path = p;
-        String dirPath = superPath+"/"+path;
-        File dir = new File(dirPath);
-        if (dir.isDirectory())
-        {
-            try {
-                System.out.println("Directory already exists - deleting");
-                deleteFileOrFolder(Paths.get(dirPath));
-                System.out.println("Deleting Finished");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        path = p;
+//        String dirPath = superPath+"/"+path;
+//        File dir = new File(dirPath);
+//        if (dir.isDirectory())
+//        {
+//            try {
+//                System.out.println("Directory already exists - deleting");
+//                deleteFileOrFolder(Paths.get(dirPath));
+//                System.out.println("Deleting Finished");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     public static void deleteFileOrFolder(final Path path) throws IOException {
@@ -71,7 +71,7 @@ public class HistoryManager {
 
         try{
             PrintWriter writer = new PrintWriter(filePath, "UTF-8");
-            writer.println("G:"+i.gene.String());
+            writer.println("G:"+i.getGene().String());
             if (i.parents.size() > 1) {
                 HistoricItem p1 = i.parents.get(0), p2 = i.parents.get(1);
                 writer.println("P:" + (generation - 1) + " " + p1.genId);
@@ -87,7 +87,7 @@ public class HistoryManager {
     {
         for (HistoricItem i:g.getMembers())
         {
-            recordItem(i, g.generation);
+//            recordItem(i, g.generation);
         }
     }
 }

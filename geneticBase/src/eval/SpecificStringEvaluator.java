@@ -1,5 +1,6 @@
 package eval;
 import geneticBase.Genome;
+import helper.StringToBinary;
 
 import java.util.ArrayList;
 

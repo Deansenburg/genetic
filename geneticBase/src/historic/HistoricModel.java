@@ -21,5 +21,17 @@ public class HistoricModel {
 	{
 		return new ArrayList<>(generations);
 	}
+
+	public Generation getGeneration(int i)
+	{
+		for (Generation g:new ArrayList<>(generations))
+		{
+			if(g.generation == i)
+			{
+				return g;
+			}
+		}
+		return null;
+	}
 	
 }
