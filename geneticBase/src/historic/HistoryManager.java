@@ -19,19 +19,19 @@ public class HistoryManager {
 
     public HistoryManager(String p)
     {
-//        path = p;
-//        String dirPath = superPath+"/"+path;
-//        File dir = new File(dirPath);
-//        if (dir.isDirectory())
-//        {
-//            try {
-//                System.out.println("Directory already exists - deleting");
-//                deleteFileOrFolder(Paths.get(dirPath));
-//                System.out.println("Deleting Finished");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        path = p;
+        String dirPath = superPath+"/"+path;
+        File dir = new File(dirPath);
+        if (dir.isDirectory())
+        {
+            try {
+                System.out.println("Directory already exists - deleting");
+                deleteFileOrFolder(Paths.get(dirPath));
+                System.out.println("Deleting Finished");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void deleteFileOrFolder(final Path path) throws IOException {
@@ -87,7 +87,7 @@ public class HistoryManager {
     {
         for (HistoricItem i:g.getMembers())
         {
-//            recordItem(i, g.generation);
+            recordItem(i, g.generation);
         }
     }
 }

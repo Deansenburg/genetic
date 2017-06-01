@@ -31,6 +31,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="HistoryManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/historic/HistoryManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CullLowest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cull/CullLowest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -41,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Generation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/historic/Generation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -106,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/historic/HistoricModel.java" />
         <option value="$PROJECT_DIR$/src/historic/view/IPresenter.java" />
         <option value="$PROJECT_DIR$/src/historic/HistoricItem.java" />
-        <option value="$PROJECT_DIR$/src/historic/HistoryManager.java" />
         <option value="$PROJECT_DIR$/src/historic/IPreview.java" />
         <option value="$PROJECT_DIR$/src/mutate/LengthMutator.java" />
         <option value="$PROJECT_DIR$/src/historic/view/PresenterController.java" />
@@ -123,6 +134,7 @@
         <option value="$PROJECT_DIR$/src/cull/CullHighest.java" />
         <option value="$PROJECT_DIR$/src/cull/CullLowest.java" />
         <option value="$PROJECT_DIR$/src/historic/Generation.java" />
+        <option value="$PROJECT_DIR$/src/historic/HistoryManager.java" />
       </list>
     </option>
   </component>
@@ -709,16 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/historic/HistoryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="73" column="43" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/historic/view/IPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -900,6 +902,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/historic/HistoryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
