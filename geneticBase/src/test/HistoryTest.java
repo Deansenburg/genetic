@@ -27,7 +27,10 @@ public class HistoryTest {
 
 		StringToBinary sB = new StringToBinary();
 		String target = "Hello";
+
 		HistoryManager manager = new HistoryManager("HistoryTest");
+		manager.setEnabled(false);
+		manager.checkPath();
 
 		IBreeder b = new Breeder();
 		IMutator m = new BinaryMutator(new LengthMutator(null));
